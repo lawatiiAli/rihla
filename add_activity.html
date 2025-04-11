@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rihla - Home</title>
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body>
+    <header>
+        <div class="logo-container"></div>
+        <h1>Rihla - Explore Oman</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="transport.html">Transportation</a></li>
+            <li><a href="add_activity.html">Add Activity</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
+<br><br>
+<main id="add_activity">
+  <h2>Add Your Tourism Activity</h2>
+  <p>Are you offering a tourism service in Oman? Fill out the form below to share your activity on our website.</p>
+
+  <form action="https://httpbin.org/get" method="get">
+    <label for="name">Activity Name:</label><br>
+    <input type="text" id="name" name="activity_name" required><br><br>
+
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="5" cols="50" required>Write your activity description</textarea><br><br>
+
+    <label for="price">Price (OMR):</label><br>
+    <input type="number" id="price" name="price" required><br><br>
+
+    <label for="location">Location:</label><br>
+    <input type="text" id="location" name="location" required><br><br>
+
+    <label for="phone">Contact Number:</label><br>
+    <input type="tel" id="phone" name="contact_number" required><br><br>
+
+    <label for="image">Image Link (optional):</label><br>
+    <input type="url" id="image" name="image_link"><br><br>
+
+    <input type="submit" value="Submit Activity">
+    <input type="reset" value="Reset">
+  </form>
+ 
+</main>
+<footer>
+  <p>&copy; 2025 Rihla. All rights reserved.</p>
+  <br>
+  <a href="#home">go back to Index page</a>
+</footer>
+
+</body>

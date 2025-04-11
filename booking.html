@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rihla - Home</title>
+  <link rel="stylesheet" href="style.css">
+    <style>
+        h2{
+            font-family: 'Times New Roman', Times, serif
+        }
+
+    </style>
+  
+</head>
+<body>
+    <header>
+        <div class="logo-container"></div>
+        <h1>Rihla - Explore Oman</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="transport.html">Transportation</a></li>
+            <li><a href="add_activity.html">Add Activity</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
+<br><br>
+<main id="booking">
+    <h2>Tourist Attractions Booking</h2>
+    <p>Below are some top tourist destinations you can visit in Oman.</p>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+      <tr>
+        <th>Place</th>
+        <th>Description</th>
+        <th>Price (OMR)</th>
+      </tr>
+      <tr>
+        <td>Wadi Shab <img src="Wadi-shab-tips.jpg" alt="wadi shab" style="width: 20%; height: 20%;"></td>
+        <td>Hiking and swimming in stunning natural pools</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Nizwa Fort <img src="nizwa-fort.jpg" alt="Nizwa fort" style="width: 20%; height: 20%;"></td>
+        <td>Historical fortress with panoramic views</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>Sur Dhow Factory <img src="dhow.jpg" alt="dhow Factory" style="width: 20%; height: 20%;" ></td>
+        <td>Traditional boat-building experience</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Jebel Akhdar Tour <img src="Jabel-al-akhdar_450_750.jpg" alt="Jabal akhdar" style="width: 20%; height: 20%;"></td>
+        <td>Mountain adventure with breathtaking scenery</td>
+        <td>10</td>
+      </tr>
+    </table>
+
+    <form action="https://httpbin.org/get" method="get">
+        <br>
+        <label for="name">Activity to book:</label><br>
+        <input type="text" id="name" name="activity_name" required><br><br>
+
+        <input type="submit" value="Submit booking">
+        <input type="reset" value="Reset">
+    </form>
+    
+  </main>
+  <footer>
+    <p>&copy; 2025 Rihla. All rights reserved.</p>
+    <a href="#home">go back to Index page</a>
+  </footer>
+
+</body>

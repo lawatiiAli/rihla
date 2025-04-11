@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rihla - Home</title>
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body>
+    <header>
+        <div class="logo-container"></div>
+        <h1>Rihla - Explore Oman</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="transport.html">Transportation</a></li>
+            <li><a href="add_activity.html">Add Activity</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
+<br><br>
+<main id="feedback">
+  <h2>User Feedback</h2>
+  <p>Let us and other tourists know about your experience by sharing your feedback below.</p>
+
+  <form action="https://httpbin.org/get" method="get">
+    <label for="fullname">Full Name:</label><br>
+    <input type="text" id="fullname" name="fullname" required><br><br>
+
+    <label for="activity">Which activity did you try?</label><br>
+    <input type="text" id="activity" name="activity" required><br><br>
+
+    <label>How would you rate the experience?</label><br>
+    <input type="radio" name="rating" value="Excellent" required> Excellent<br>
+    <input type="radio" name="rating" value="Good"> Good<br>
+    <input type="radio" name="rating" value="Average"> Average<br>
+    <input type="radio" name="rating" value="Poor"> Poor<br><br>
+
+    <label for="comments">Additional Comments:</label><br>
+    <textarea id="comments" name="comments" rows="5" cols="50">write your comments:</textarea><br><br>
+
+    <input type="submit" value="Submit Feedback">
+    <input type="reset" value="Clear">
+  </form>
+  
+</main>
+<footer>
+  <p>&copy; 2025 Rihla. All rights reserved.</p>
+  <br>
+  <a href="#home">go back to Index page</a>
+</footer>
+
+
+</body>
