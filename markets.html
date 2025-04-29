@@ -2,72 +2,175 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Rihla - Home</title>
-  <link rel="stylesheet" href="style.css">
-
+  <title>Rihla - Explore Oman</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   
 </head>
-<body>
-    <header>
-        <div class="logo-container"></div>
-        <h1>Rihla - Explore Oman</h1>
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="booking.html">Booking</a></li>
-            <li><a href="transport.html">Transportation</a></li>
-            <li><a href="add_activity.html">Add Activity</a></li>
-            <li><a href="feedback.html">Feedback</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </nav>
-      </header>
+<body class="bg-secondary text-white">
+  <img src="logo.jfif" alt="rihla logo"  class="rounded-circle float-end " width="110px">
+  
+  <div class="bg-light text-dark py-3">
+    <div class="row">
+      <div class="col-5"></div>
+      <div class="col-4 ">
+        <h1 id="home-title">Rihla - Explore Oman</h1>
+      </div>
+      <div class="col-3"></div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-2"></div>
+      <div class="col"> <a href="index.html" class="text-decoration-none">Home</a></div>
+      <div class="col"> <a href="booking.html" class="text-decoration-none">Booking</a></div>
+      <div class="col"> <a href="calculator.html" class="text-decoration-none">Calculate</a></div>
+      <div class="col"> <a href="transport.html" class="text-decoration-none">Transportation</a></div>
+     
+      <div class="col"> <a href="add_activity.html" class="text-decoration-none">Add Activity</a></div>
+      <div class="col"> <a href="funpage.html" class="text-decoration-none">Puzzle</a></div>
+      <div class="col"> <a href="review.html" class="text-decoration-none">Review</a></div>
+      <div class="col"> <a href="questionnaire.html" class="text-decoration-none">Questionnaire</a></div>
+      <div class="col"> <a href="about.html" class="text-decoration-none">About us</a></div>
+      <div class="col"> <a href="contact.html" class="text-decoration-none">Contact us</a></div>
+      <div class="col-2"></div>
+    </div>
+  </div>
 <br><br>
-<main id="markets">
-  <h2>Top Traditional Markets in Oman</h2>
-  <table border="1">
-    <tr>
-      <th colspan="3" class="section">Famous Souqs in Oman</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th>City</th>
-      <th>What You'll Find</th>
-    </tr>
-    <tr>
-      <td>Mutrah Souq</td>
-      <td>Muscat</td>
-      <td>Silver jewelry, incense, scarves, antiques</td>
-    </tr>
-    <tr>
-      <td>Nizwa Souq</td>
-      <td>Nizwa</td>
-      <td>Pottery, daggers (khanjar), spices, livestock on Fridays</td>
-    </tr>
-    <tr>
-      <td>Salalah Al-Haffa Souq</td>
-      <td>Salalah</td>
-      <td>Frankincense, traditional garments, perfumes</td>
-    </tr>
-    <tr>
-      <th colspan="3" class="section">Shopping Tips</th>
-    </tr>
-    <tr>
-      <td colspan="3">
+<main>
+  
+  <div class="container mt-4">
+    <h2 class="text-center text-white">Traditional Souqs in Oman</h2>
+
+    <!-- Table to display market data -->
+    <table class="table table-bordered table-hover text-center mt-4 bg-light">
+      <thead class="table-primary text-dark">
+        <tr>
+          <th>Name</th>
+          <th>City</th>
+          <th>Items</th>
+        </tr>
+      </thead>
+      <tbody id="marketTable"></tbody>
+    </table>
+
+    <div class="d-flex justify-content-center mb-3">
+      <a class="btn btn-outline-dark bg-light" data-bs-toggle="collapse" href="#moreInfo" role="button" aria-expanded="false" aria-controls="moreInfo">
+        Show Shopping Tips
+      </a>
+    </div>
+    
+    <div class="collapse" id="moreInfo">
+      <div class="card card-body bg-light text-dark">
+        <h5>Travel Tips for Visiting Oman:</h5>
         <ul>
           <li>Bargaining is expected — don't hesitate to negotiate prices politely.</li>
           <li>Bring cash, especially for smaller stalls that don't accept cards.</li>
           <li>Try local perfumes and incense — they're signature Omani goods.</li>
         </ul>
-      </td>
-    </tr>
-  </table>
-</main>
+      </div>
+    </div>
 
-<footer>
-  <p>&copy; 2025 Rihla. All rights reserved.</p>
-  <a href="#home">go back to Index page</a>
-</footer>
+    <br><br>
+    <!-- Form to add new souq -->
+    <div class="bg-light p-4 rounded">
+      <h4 class="text-dark">Add New Souq</h4>
+      <form id="marketForm">
+        <div class="row g-2">
+          <div class="col-md-4">
+            <input type="text" id="sname" placeholder="Name" class="form-control" required>
+          </div>
+          <div class="col-md-4">
+            <input type="text" id="scity" placeholder="City" class="form-control" required>
+          </div>
+          <div class="col-md-4">
+            <input type="text" id="sitems" placeholder="Items" class="form-control" required>
+          </div>
+        </div>
+        <div class="mt-3">
+          <button type="submit" class="btn btn-primary">Add Souq</button>
+        </div>
+      </form>
+    </div>
 
+    <!-- Search section -->
+    <div class="bg-light p-4 rounded mt-4">
+      <h4 class="text-dark">Search Souqs</h4>
+      <input type="text" id="searchMarketInput" class="form-control mb-2" placeholder="Enter Name or City">
+      <button class="btn btn-success" id="searchMarketBtn">Search</button>
+      <div class="table-responsive mt-3">
+        <table class="table table-bordered table-hover text-center bg-light">
+          <thead class="table-success text-dark">
+            <tr>
+              <th>Name</th>
+              <th>City</th>
+              <th>Items</th>
+            </tr>
+          </thead>
+          <tbody id="marketSearchTable"></tbody>
+        </table>
+        <div id="noMarketResults" class="text-white text-center"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  
+  <script>
+    function Souq(name, city, items) {
+      this.name = name;
+      this.city = city;
+      this.items = items;
+    }
+
+    let markets = [
+      new Souq("Mutrah Souq", "Muscat", "Silver jewelry, incense, scarves, antiques"),
+      new Souq("Nizwa Souq", "Nizwa", "Pottery, daggers, spices, livestock on Fridays"),
+      new Souq("Salalah Al-Haffa Souq", "Salalah", "Frankincense, traditional garments, perfumes")
+    ];
+
+    function displayMarkets() {
+      const table = document.getElementById("marketTable");
+      table.innerHTML = "";
+      markets.forEach(m => {
+        table.innerHTML += `<tr><td>${m.name}</td><td>${m.city}</td><td>${m.items}</td></tr>`;
+      });
+    }
+
+    document.getElementById("marketForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("sname").value;
+      const city = document.getElementById("scity").value;
+      const items = document.getElementById("sitems").value;
+      markets.push(new Souq(name, city, items));
+      displayMarkets();
+      this.reset();
+    });
+
+    document.getElementById("searchMarketBtn").addEventListener("click", function () {
+      const keyword = document.getElementById("searchMarketInput").value.trim().toLowerCase();
+      const results = markets.filter(s =>
+        s.name.toLowerCase().includes(keyword) ||
+        s.city.toLowerCase().includes(keyword)
+      );
+
+      const resultTable = document.getElementById("marketSearchTable");
+      const noResult = document.getElementById("noMarketResults");
+
+      resultTable.innerHTML = "";
+      noResult.innerHTML = "";
+
+      if (results.length > 0) {
+        results.forEach(m => {
+          resultTable.innerHTML += `<tr><td>${m.name}</td><td>${m.city}</td><td>${m.items}</td></tr>`;
+        });
+      } else {
+        noResult.innerHTML = "No matching souq found.";
+      }
+    });
+
+    displayMarkets();
+  </script>
 </body>
+</html>

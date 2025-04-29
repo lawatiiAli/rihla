@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html  >
 <head>
-   
+  
   <title>Rihla - Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
   
 </head>
 <body class="bg-secondary text-white">
+
   <img src="logo.jfif" alt="rihla logo"  class="rounded-circle float-end " width="110px">
-  
   <div class="bg-light text-dark py-3">
     <div class="row">
       <div class="col-5"></div>
@@ -29,46 +28,66 @@
       <div class="col"> <a href="markets.html" class="text-decoration-none">Traditional Souqs</a></div>
       <div class="col"> <a href="add_activity.html" class="text-decoration-none">Add Activity</a></div>
       <div class="col"> <a href="funpage.html" class="text-decoration-none">Puzzle</a></div>
-      <div class="col"> <a href="review.html" class="text-decoration-none">Review</a></div>
       <div class="col"> <a href="questionnaire.html" class="text-decoration-none">Questionnaire</a></div>
       <div class="col"> <a href="about.html" class="text-decoration-none">About us</a></div>
-      
+      <div class="col"> <a href="contact.html" class="text-decoration-none">Contact us</a></div>
       <div class="col-2"></div>
     </div>
   </div>
 <br><br>
 
-<main id="contact">
+<main id="review">
   <div class="row justify-content-center">
     <div class="col-md-8 col-lg-6">
 
-      <h2 class="text-center">Contact Us</h2>
+      <h2 class="text-center">User review</h2>
+      <p class="text-center">Let us and other tourists know about your experience by sharing your review below.</p>
 
-      <form action="mailto:team@rihla.com" method="POST" enctype="text/plain" class="was-validated">
+      <form action="https://httpbin.org/get" method="get" class="was-validated">
 
         <div class="mb-3">
-          <label for="name" class="form-label">Your Name:</label>
-          <input type="text" id="name" name="name" class="form-control" required>
+          <label for="fullname" class="form-label">Full Name:</label>
+          <input type="text" id="fullname" name="fullname" class="form-control" required>
           <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">Please enter your name.</div>
+          <div class="invalid-feedback">Please enter your full name.</div>
         </div>
 
         <div class="mb-3">
-          <label for="email" class="form-label">Your Email:</label>
-          <input type="email" id="email" name="email" class="form-control" required>
+          <label for="activity" class="form-label">Which activity did you try?</label>
+          <input type="text" id="activity" name="activity" class="form-control" required>
           <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">Please enter a valid email address.</div>
+          <div class="invalid-feedback">Please specify the activity.</div>
         </div>
 
         <div class="mb-3">
-          <label for="message" class="form-label">Message:</label>
-          <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-          <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">Please write your message.</div>
+          <label class="form-label d-block">How would you rate the experience?</label>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" name="rating" value="Excellent" id="rate1" required>
+            <label for="rate1" class="form-check-label">Excellent</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" name="rating" value="Good" id="rate2" required>
+            <label for="rate2" class="form-check-label">Good</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" name="rating" value="Average" id="rate3" required>
+            <label for="rate3" class="form-check-label">Average</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" name="rating" value="Poor" id="rate4" required>
+            <label for="rate4" class="form-check-label">Poor</label>
+          </div>
+          <div class="invalid-feedback">Please select a rating.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="comments" class="form-label">Additional Comments:</label>
+          <textarea id="comments" name="comments" class="form-control" rows="5">write your comments:</textarea>
+          <div class="valid-feedback">Optional</div>
         </div>
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-          <button type="submit" class="btn btn-primary">Send</button>
+          <button type="submit" class="btn btn-primary">Submit review</button>
           <button type="reset" class="btn btn-secondary">Clear</button>
         </div>
 
@@ -77,7 +96,6 @@
     </div>
   </div>
 </main>
-
 <div class="row">
   <div class="col-5"></div>
   <div class="col-4"><p>&copy; 2025 Rihla. All rights reserved.</p></div>
