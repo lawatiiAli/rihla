@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rihla - Fun Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body class="bg-secondary text-white">
+    <img src="logo.jfif" alt="rihla logo"  class="rounded-circle float-end " width="110px">
+    
+    <div class="bg-light text-dark py-3">
+      <div class="row">
+        <div class="col-5"></div>
+        <div class="col-4 ">
+          <h1 id="home-title">Rihla - Explore Oman</h1>
+        </div>
+        <div class="col-3"></div>
+      </div>
+
+            <div class="col btn btn-primary ">
+        <a href="search_bookings.php" class="text-decoration-none text-white">Search Bookings</a>
+      </div>
+      <div class="col btn btn-primary">
+        <a href="update_bookings.php" class="text-decoration-none text-white">Update Bookings</a>
+      </div>
+      <div class="col btn btn-primary">
+        <a href="delete_bookings.php" class="text-decoration-none text-white">Delete Booking</a>
+      </div>
+  
+      <div class="row text-center">
+        <div class="col-2"></div>
+        <div class="col"> <a href="index.html" class="text-decoration-none">Home</a></div>
+        <div class="col"> <a href="booking.html" class="text-decoration-none">Booking</a></div>
+        <div class="col"> <a href="calculator.html" class="text-decoration-none">Calculate</a></div>
+        <div class="col"> <a href="transport.html" class="text-decoration-none">Transportation</a></div>
+        <div class="col"> <a href="markets.html" class="text-decoration-none">Traditional Souqs</a></div>
+        <div class="col"> <a href="add_activity.html" class="text-decoration-none">Add Activity</a></div>
+        <div class="col"> <a href="review.html" class="text-decoration-none">Review</a></div>
+        <div class="col"> <a href="questionnaire.html" class="text-decoration-none">Questionnaire</a></div>
+       
+        <div class="col"> <a href="contact.html" class="text-decoration-none">Contact us</a></div>
+        
+        <div class="col-2"></div>
+      </div>
+    </div>
+  <br><br>
+
+<!-- Main -->
+<div class="container">
+  <h2 class="text-center mt-4">Tourism Word Puzzle Game</h2>
+  <div class="game-section text-center">
+
+    <p>Form a correct tourism sentence from these words:</p>
+
+    <!-- Word buttons -->
+    <div id="wordButtons" class="mb-3"></div>
+
+    <!-- Sentence area -->
+    <div class="mb-3">
+      <h4>Your Sentence:</h4>
+      <div id="sentenceArea" class="border border-light p-2 rounded bg-secondary"></div>
+    </div>
+
+    <!-- Buttons -->
+    <button class="btn btn-success mb-2" onclick="checkSentence()">Check Answer</button>
+    <button class="btn btn-danger mb-2" onclick="resetGame()">Reset</button>
+
+    <!-- Result -->
+    <div id="result" class="mt-3 fs-4"></div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="row mt-4">
+  <div class="col text-center">
+    <p>&copy; 2025 Rihla. All rights reserved.</p>
+  </div>
+</div>
+
+<!-- JavaScript Code -->
+<script>
+   /*
+    
+    - 'correctSentence' holds the target sentence to form.
+    - 'words' array holds shuffled words that the user can click.
+    - 'displayWords()' creates buttons dynamically for each word.
+    - 'addWord(word)' updates the sentence area with the selected word.
+    - 'checkSentence()' compares the user-formed sentence with the correct one.
+    - 'resetGame()' clears everything and reshuffles words to start fresh.
+  */
+  // Define the correct sentence
+  const correctSentence = "Visit beautiful Oman today";
+
+  // Define the words for the puzzle
+  const words = ["beautiful", "today", "Oman", "Visit"];
+
+  // This array will store the words selected by the user
+  let userSentence = [];
+
+  // Function to display the word buttons dynamically
+  function displayWords() {
+    const wordButtonsDiv = document.getElementById('wordButtons');
+    wordButtonsDiv.innerHTML = "";
+
+    // Shuffle the words randomly
+    const shuffledWords = [...words].sort(() => 0.5 - Math.random());
+
+    shuffledWords.forEach(word => {
+      const btn = document.createElement('button');
+      btn.textContent = word;
+      btn.className = "btn btn-light word-button";
+      btn.onclick = function() {
+        addWord(word);
+        btn.disabled = true; // disable word after choosing
+      };
+      wordButtonsDiv.appendChild(btn);
+    });
+  }
+
+  // Function to add a selected word to the user's sentence
+  function addWord(word) {
+    userSentence.push(word);
+    document.getElementById('sentenceArea').innerText = userSentence.join(" ");
+  }
+
+  // Function to check if the formed sentence is correct
+  function checkSentence() {
+    const finalSentence = userSentence.join(" ");
+    if (finalSentence === correctSentence) {
+      document.getElementById('result').innerHTML = "<span class='text-success'>Excellent! You made the correct sentence! :) </span>";
+    } else {
+      document.getElementById('result').innerHTML = "<span class='text-danger'>Oops! Try again! :( </span>";
+    }
+  }
+
+  // Function to reset the game
+  function resetGame() {
+    userSentence = [];
+    document.getElementById('sentenceArea').innerText = "";
+    document.getElementById('result').innerText = "";
+    displayWords();
+  }
+
+  // Call the displayWords function initially to set up the game
+  displayWords();
+
+ 
+</script>
+
+</body>
+</html>

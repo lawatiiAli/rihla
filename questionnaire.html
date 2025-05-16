@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rihla - Questionnaire</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body class="bg-secondary text-white">
+    <img src="logo.jfif" alt="rihla logo"  class="rounded-circle float-end " width="110px">
+    
+    <div class="bg-light text-dark py-3">
+      <div class="row">
+        <div class="col-5"></div>
+        <div class="col-4 ">
+          <h1 id="home-title">Rihla - Explore Oman</h1>
+        </div>
+        <div class="col-3"></div>
+      </div>
+
+            <div class="col btn btn-primary ">
+        <a href="search_bookings.php" class="text-decoration-none text-white">Search Bookings</a>
+      </div>
+      <div class="col btn btn-primary">
+        <a href="update_bookings.php" class="text-decoration-none text-white">Update Bookings</a>
+      </div>
+      <div class="col btn btn-primary">
+        <a href="delete_bookings.php" class="text-decoration-none text-white">Delete Booking</a>
+      </div>
+  
+      <div class="row text-center">
+        <div class="col-2"></div>
+        <div class="col"> <a href="index.html" class="text-decoration-none">Home</a></div>
+        <div class="col"> <a href="booking.html" class="text-decoration-none">Booking</a></div>
+        <div class="col"> <a href="calculator.html" class="text-decoration-none">Calculate</a></div>
+        <div class="col"> <a href="transport.html" class="text-decoration-none">Transportation</a></div>
+        <div class="col"> <a href="markets.html" class="text-decoration-none">Traditional Souqs</a></div>
+        <div class="col"> <a href="add_activity.html" class="text-decoration-none">Add Activity</a></div>
+        <div class="col"> <a href="funpage.html" class="text-decoration-none">Puzzle</a></div>
+        <div class="col"> <a href="review.html" class="text-decoration-none">Review</a></div>
+        
+        <div class="col"> <a href="about.html" class="text-decoration-none">About us</a></div>
+        <div class="col"> <a href="contact.html" class="text-decoration-none">Contact us</a></div>
+        
+        <div class="col-2"></div>
+      </div>
+    </div>
+  <br><br>
+
+<!-- Main -->
+<main class="container py-5">
+    <h1 class="text-center mb-4">Travel Questionnaire</h1>
+
+    <!-- Questionnaire Form -->
+    <form action="questionnaire.php" method="post" class="bg-light text-dark p-4 rounded mb-5">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" id="email" name="email"
+               class="form-control" required="required"/>
+      </div>
+      <div class="mb-3">
+        <label for="agegrp" class="form-label">Age Group:</label>
+        <select id="agegrp" name="agegrp" class="form-select" required="required">
+          <option value="under_18">Under 18</option>
+          <option value="18_35">18-35</option>
+          <option value="36_60">36-60</option>
+          <option value="over_60">Over 60</option>
+        </select>
+      </div>
+      <fieldset class="mb-3">
+        <legend>Preferred Activities:</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="pref_hiking"
+                 name="prefs[]" value="Hiking"/>
+          <label class="form-check-label" for="pref_hiking">Hiking</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="pref_culture"
+                 name="prefs[]" value="Culture"/>
+          <label class="form-check-label" for="pref_culture">Cultural Sites</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="pref_beach"
+                 name="prefs[]" value="Beach"/>
+          <label class="form-check-label" for="pref_beach">Beach</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="pref_wadi"
+                 name="prefs[]" value="Wadi Exploration"/>
+          <label class="form-check-label" for="pref_wadi">Wadi Exploration</label>
+        </div>
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Submit Responses</button>
+    </form>
+
+    <!-- Responses Table -->
+    <section class="bg-light text-dark p-4 rounded">
+      <h2>All Questionnaire Responses</h2>
+      <table class="table table-bordered table-hover text-center mb-0">
+        <thead class="table-primary text-dark">
+          <tr>
+            <th>#</th>
+            <th>Email</th>
+            <th>Age Group</th>
+            <th>Preferences</th>
+            <th>Submitted At</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php include 'questionnaire.php'; ?>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+<!-- Footer -->
+<div class="row mt-4">
+  <div class="col text-center">
+    <p>&copy; 2025 Rihla. All rights reserved.</p>
+  </div>
+</div>
+
+<!-- JavaScript Validation -->
+<script>
+  // Email pattern: Only accept emails ending with @student.squ.edu.om
+  // Phone pattern: Must start with +968 or 00968 and have 8 digits starting with 7, 8, or 9
+  const form = document.getElementById('questionnaireForm');
+
+  form.addEventListener('submit', function(event) {
+    if (!form.checkValidity()) {
+      event.preventDefault(); // Stop form submission if validation fails
+      event.stopPropagation();
+    }
+
+    form.classList.add('was-validated');
+  });
+
+  
+  
+</script>
+
+</body>
+</html>
